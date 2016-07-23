@@ -50,14 +50,14 @@ def main ():
 	if not 'str' in str (type (TRG)):
 		for i in TRG.readlines ():
 			try:
-				check_once (i.strip ('\n').strip ('\r'), os.verbose)
+				net.scan.check_once (i.strip ('\n').strip ('\r'), os.verbose)
 			except KeyboardInterrupt:
 				print '-'*50
 				print INFO + 'Exiting... Finished at ' + gettime ()
 				exit (0)
 	else:
 		try:
-			check_once (TRG, op.verbose)
+			net.scan.check_once (TRG, op.verbose)
 		except KeyboardInterrupt:
 			print '-'*50
 			print INFO + 'Exiting... Finished at ' + gettime ()
@@ -65,7 +65,7 @@ def main ():
 
 	if op.output is not None:
 		from modules.fileop import save_output_file
-		save_output_file (op.output, FULL_LIST)
+		fileop.save_output_file (op.output, net.scan.FULL_LIST)
 
 
 if __name__ == '__main__':
