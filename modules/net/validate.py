@@ -1,9 +1,9 @@
-from modules.const import BAD_THEMES_PATH, WPCONFIG_PATH
+from modules.const import BAD_THEMES_PATH, WPCONFIG_PATH, VERSION_FILE_PATH
 from requests import get
 
 from modules.const import INFO, OK, ERR
 
-def update_databases (wpconfig_url, themes_url):
+def update_databases (wpconfig_url, themes_url, version_file_url):
 	print INFO + 'Update started!'
 	try:
 		print INFO + 'Updating vulnerability themes database...'
@@ -20,7 +20,14 @@ def update_databases (wpconfig_url, themes_url):
 
 		print OK + 'wp-config.php pathes database updated successfully!'
 
-		print OK + 'Databases update complete!'
+		print INFO + 'Updating version file...'
+		with open (VERSION_FILE_PATH, 'w') as out:
+			out.write (get (version_file_url.text)
+		out.close
+
+		print OK + 'Version file updated successfully!'
+
+		print OK + 'Update complete!'
 	except:
 		print ERR + 'Error updating databases!'
 		exit (-1)

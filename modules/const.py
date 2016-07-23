@@ -8,6 +8,7 @@ VERSION_FILE_PATH = 'version.json'
 
 WPCONFIG_DB_REMOTE = 'https://raw.githubusercontent.com/doctorrabb/badtheme/master/res/wpconfig.lst'
 THEMES_DB_REMOTE = 'https://raw.githubusercontent.com/doctorrabb/badtheme/master/res/themes.json'
+VERSION_REMOTE = 'https://raw.githubusercontent.com/doctorrabb/badtheme/master/version.json'
 
 ERR = Fore.RED + '[!]' + Fore.RESET + ' '
 OK = Fore.GREEN + '[+]' + Fore.RESET + ' '
