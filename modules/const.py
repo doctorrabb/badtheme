@@ -10,6 +10,8 @@ WPCONFIG_DB_REMOTE = 'https://raw.githubusercontent.com/doctorrabb/badtheme/mast
 THEMES_DB_REMOTE = 'https://raw.githubusercontent.com/doctorrabb/badtheme/master/res/themes.json'
 VERSION_REMOTE = 'https://raw.githubusercontent.com/doctorrabb/badtheme/master/version.json'
 
+WP_PAGES = ['wp-admin', 'wp-login.php', 'readme.html']
+
 ERR = Fore.RED + '[!]' + Fore.RESET + ' '
 OK = Fore.GREEN + '[+]' + Fore.RESET + ' '
 NO = Fore.RED + '[-]' + Fore.RESET + ' '

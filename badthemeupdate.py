@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 from modules.net.validate import update_databases
 from modules.const import THEMES_DB_REMOTE, WPCONFIG_DB_REMOTE, VERSION_REMOTE
 
