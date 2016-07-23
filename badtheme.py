@@ -49,8 +49,13 @@ def main ():
 	try:
 		if not 'str' in str (type (TRG)):
 			for i in TRG.readlines ():
+				if not is_good_response (TRG):
+					print ERR + 'Site ' + i.strip ('\n').strip ('\r') + ' is unavailable! :('
 				check_once (i.strip ('\n').strip ('\r'), os.verbose)
 		else:
+				if not is_good_response (TRG):
+					print ERR + 'Site is unavailable! :('
+					exit (-1)
 				check_once (TRG, op.verbose)
 		if op.output is not None:
 			from modules.fileop import save_output_file

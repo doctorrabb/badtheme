@@ -3,10 +3,18 @@
 from sys import argv
 from modules.helpers.wpdetector import WordpressDetector
 
+from modules.net.scan import is_good_response
+
 from modules.const import ERR, NO, OK, INFO
 
 def main ():
 	if len (argv) > 1:
+		print INFO + 'Checking site...'
+
+		if not is_good_response (argv [1]):
+			print ERR + 'Site is unavailable! :('
+			exit (-1)
+
 		print INFO + 'Detecting wordpress...'
 		wpd = WordpressDetector (argv [1])
 
