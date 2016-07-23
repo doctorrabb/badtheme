@@ -1,0 +1,10 @@
+./wp-config.php
+/wp-config.php
+../wp-config.php
+../../wp-config.php
+../../../../wp-config.php
+file:///C:/wamp/www/wp-config.php
+/path/wp-config.php
+file:///var/www/wp-config.php
+file:///C:/xampp/htdocs/wp-config.php
+file:///C:/wamp/www/wp-config.php
