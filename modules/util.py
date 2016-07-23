@@ -1,10 +1,11 @@
 def init_option_parser ():
 	from optparse import OptionParser
 
-	op = OptionParser ('-t <url> [-T <file with targets> -v <verbose>')
+	op = OptionParser ('-t <url> [-T <file with targets> -v <verbose> -o <output file>]')
 	op.add_option ('-t', '--target', dest='target', type='string', help='use this option to set target\'s url')
 	op.add_option ('-T', "--target-list", dest='targets', type='string', help='use this option to set file with targets')
-	op.add_option ('-v', "--verbose", dest='verbose', default=False, action='store_true', help='use this option to set file with targets')
+	op.add_option ('-v', "--verbose", dest='verbose', default=False, action='store_true', help='use this option to enable verbose mode')
+	op.add_option ('-o', "--output", dest='output', help='use this option to write goods at output file')
 	(op, args) = op.parse_args ()
 
 	return op
