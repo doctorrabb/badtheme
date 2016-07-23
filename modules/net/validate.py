@@ -16,18 +16,18 @@ def update_databases (wpconfig_url, themes_url, version_file_url):
 		print INFO + 'Updating wp-config.php pathes database...'
 		with open (WPCONFIG_PATH, 'w') as out:
 			out.write (get (wpconfig_url).text)
-		out.close
+		out.close ()
 
 		print OK + 'wp-config.php pathes database updated successfully!'
 
 		print INFO + 'Updating version file...'
 		with open (VERSION_FILE_PATH, 'w') as out:
-			out.write (get (version_file_url.text)
-		out.close
+			out.write (get (version_file_url).text)
+		out.close ()
 
 		print OK + 'Version file updated successfully!'
 
 		print OK + 'Update complete!'
-	except:
+	except Exception as e:
 		print ERR + 'Error updating databases!'
 		exit (-1)

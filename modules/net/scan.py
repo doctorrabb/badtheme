@@ -1,5 +1,6 @@
 from colorama import Fore
-from modules.const import ERR, OK, INFO, NO
+from modules.const import OK, INFO, NO
+from modules.util import *
 
 FULL_LIST = list ()
 

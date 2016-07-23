@@ -1,9 +1,10 @@
+#!/usr/bin/python
 # coding: utf8
 
-from modules.util import *
+from modules.net.scan import *
+
 from modules.const import ERR, OK, NO, INFO
 from colorama import Fore
-from sys import stdout
 
 FULL_GOODS_LIST = list ()
 
@@ -50,14 +51,14 @@ def main ():
 	if not 'str' in str (type (TRG)):
 		for i in TRG.readlines ():
 			try:
-				net.scan.check_once (i.strip ('\n').strip ('\r'), os.verbose)
+				check_once (i.strip ('\n').strip ('\r'), os.verbose)
 			except KeyboardInterrupt:
 				print '-'*50
 				print INFO + 'Exiting... Finished at ' + gettime ()
 				exit (0)
 	else:
 		try:
-			net.scan.check_once (TRG, op.verbose)
+			check_once (TRG, op.verbose)
 		except KeyboardInterrupt:
 			print '-'*50
 			print INFO + 'Exiting... Finished at ' + gettime ()
@@ -65,7 +66,7 @@ def main ():
 
 	if op.output is not None:
 		from modules.fileop import save_output_file
-		fileop.save_output_file (op.output, net.scan.FULL_LIST)
+		save_output_file (op.output, FULL_LIST)
 
 
 if __name__ == '__main__':
