@@ -49,6 +49,11 @@
 			"name": "project10",
 			"path": "/wp-content/themes/project10-theme/function/upload-handler.php",
 			"type": 0
+		},
+		{
+			"name": "amplus",
+			"path": "/wp-content/themes/amplus/functions/upload-handler.php",
+			"type": 0
 		}
 	]
 }
