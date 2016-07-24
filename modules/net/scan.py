@@ -19,22 +19,33 @@ def check_once (target, verbose=False):
 
 def check (trg, verbose=False):
 
+	from json import loads
+
 	goods = list ()
 	global FULL_LIST
 
 	for theme in get_themes ():
 		print INFO + 'Checking item ' + Fore.CYAN + theme ['name'] + Fore.RESET +' from database...'
-		for conf in get_wpconfigs ():
-			print '\t|Checking "wp-config.php" path ' + Fore.CYAN + conf + Fore.RESET + ' from database...'
+		if url_pattern_exist (trg, theme ['path']):
+				print OK + 'Bad item ' + Fore.CYAN + theme ['name'] + Fore.RESET + ' found! Explotation url: ' + Fore.RED + trg + theme ['path'] + Fore.RESET
 
-			if verbose:
-				print  '[VERBOSE]\t|Full path: ' + trg + theme ['path'] + conf
+				for exploit in get_exploits ():
+					if theme ['type'] == exploit ['type-name']:
+						if raw_input ('Run exploit ' + exploit ['name'] + ' for ' + theme ['name'] + '? (y/n): ') == 'y':
+							print INFO + 'Preparing exploit...'
+							exploit_validate (exploit ['path'], trg + theme ['path'])
+							import webbrowser
+							import os
 
-			if url_pattern_exist (trg, theme ['path'] + conf):
+							webbrowser.open (os.path.abspath (exploit ['path'] + 'moded.html'))
+							exit (0)
+
 				goods.append (theme ['name'])
-				FULL_LIST.append ({'name': theme ['name'], 'url': trg + theme ['path'] + conf, 'hackable': True})
-			else:
-				FULL_LIST.append ({'name': theme ['name'], 'url': trg + theme ['path'] + conf, 'hackable': False})
+				FULL_LIST.append ({'name': theme ['name'], 'url': trg + theme ['path'], 'hackable': True})
+		else:
+				FULL_LIST.append ({'name': theme ['name'], 'url': trg + theme ['path'], 'hackable': False})
+
+			
 
 	return goods
 

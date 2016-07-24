@@ -1,36 +1,54 @@
 {
 	"list" : [
 		{
+			"name": "rockstar-theme",
+			"path": "/wp-content/themes/rockstar-theme/functions/upload-handler.php",
+			"type": 0
+		},
+		{
 			"name": "TheLoft",
-			"path": "/wp-content/themes/TheLoft/download.php?file="
+			"path": "/wp-content/themes/TheLoft/download.php?file=",
+			"type": 1
 		},
 		{
 			"name": "yakimabait",
-			"path": "/wp-content/themes/yakimabait/download.php?file="
+			"path": "/wp-content/themes/yakimabait/download.php?file=",
+			"type": 1
 		},
 		{
 			"name": "markant",
-			"path": "/wp-content/themes/markant/download.php?file="
+			"path": "/wp-content/themes/markant/download.php?file=",
+			"type": 1
 		},
 		{
 			"name": "SMWF",
-			"path": "/wp-content/themes/SMWF/inc/download.php?file="
+			"path": "/wp-content/themes/SMWF/inc/download.php?file=",
+			"type": 1
 		},
 		{
 			"name": "mTheme-Unus", 
-			"path": "/wp-content/themes/mTheme-Unus/css/css.php?files="
+			"path": "/wp-content/themes/mTheme-Unus/css/css.php?files=",
+			"type": 1
 		},
 		{
 			"name": "acento",
-			"path": "/wp-content/themes/acento/includes/view-pdf.php?download=1&file="
+			"path": "/wp-content/themes/acento/includes/view-pdf.php?download=1&file=",
+			"type": 1
 		},
 		{
 			"name": "MichaelCanthony",
-			"path": "/wp-content/themes/MichaelCanthony/download.php?file="
+			"path": "/wp-content/themes/MichaelCanthony/download.php?file=",
+			"type": 1
 		},
 		{
 			"name": "felis",
-			"path": "/wp-content/themes/felis/download.php?file="
+			"path": "/wp-content/themes/felis/download.php?file=",
+			"type": 1
+		},
+		{
+			"name": "project10",
+			"path": "/wp-content/themes/project10-theme/function/upload-handler.php",
+			"type": 0
 		}
 	]
 }

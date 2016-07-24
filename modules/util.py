@@ -1,3 +1,46 @@
+def get_exploits ():
+	from json import loads
+
+	from modules.const import EXPLOITS_PATH
+
+	str = ''
+
+	with open (EXPLOITS_PATH, 'r') as f:
+		for i in f.readlines ():
+			str += i
+		f.close ()
+
+	return loads (str) ['exploits']
+
+def exploit_validate (path, target):
+
+	exploit = dict ()
+
+	for i in get_exploits ():
+		if i ['path'] == path:
+			exploit = i
+			break
+
+	content = ''
+	file = open (path, 'r')
+	for i in file.readlines (): content += i
+	file.close ()
+
+	content = content.replace ('{{NAME}}', exploit ['name']).replace ('{{TARGET_URL}}', target).replace ('{{DESC}}', exploit ['description'])
+
+	file = open (path + 'moded.html', 'w')
+	file.write (content)
+	file.close ()
+
+def remove_tmp_exploits ():
+	from modules.const import ALL_EXPLOITS_PATH
+	import os
+
+	for moded in os.listdir (ALL_EXPLOITS_PATH):
+		if moded.endswith ('moded.html'):
+			os.remove (ALL_EXPLOITS_PATH + moded)
+
+
 def init_option_parser ():
 	from optparse import OptionParser
 

@@ -27,8 +27,7 @@ def main ():
 					print OK + 'Wordpress Version Detected!' + dec
 				else:
 					print NO + 'Wordpress version getting failed!'
-
-			exit (0)
+					exit (0)
 		else:
 			print NO + 'This is not Wordpress! :('
 	else:

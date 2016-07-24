@@ -5,6 +5,8 @@ init ()
 BAD_THEMES_PATH = 'res/themes.json'
 WPCONFIG_PATH = 'res/wpconfig.lst'
 VERSION_FILE_PATH = 'version.json'
+EXPLOITS_PATH = 'res/exploits.json'
+ALL_EXPLOITS_PATH = 'res/exploits/'
 
 WPCONFIG_DB_REMOTE = 'https://raw.githubusercontent.com/doctorrabb/badtheme/master/res/wpconfig.lst'
 THEMES_DB_REMOTE = 'https://raw.githubusercontent.com/doctorrabb/badtheme/master/res/themes.json'

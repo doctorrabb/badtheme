@@ -4,12 +4,17 @@
 from modules.net.scan import *
 
 from modules.const import ERR, OK, NO, INFO
+from modules.util import remove_tmp_exploits
 from colorama import Fore
+
+import atexit
 
 FULL_GOODS_LIST = list ()
 
 
 def main ():
+
+	#atexit.register (remove_tmp_exploits)
 
 	print '''{0}
 		__________             .______________.__                           
